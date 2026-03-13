@@ -2,9 +2,9 @@ import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, router } from "./_core/trpc";
+import { getBlogPosts, getBlogPostBySlug, getPortfolioProjects, getFeaturedProjects, getProjectBySlug } from "./db";
 
 export const appRouter = router({
-    // if you need to use socket.io, read and register route in server/_core/index.ts, all api should start with '/api/' so that the gateway can route correctly
   system: systemRouter,
   auth: router({
     me: publicProcedure.query(opts => opts.ctx.user),
@@ -17,12 +17,20 @@ export const appRouter = router({
     }),
   }),
 
-  // TODO: add feature routers here, e.g.
-  // todo: router({
-  //   list: protectedProcedure.query(({ ctx }) =>
-  //     db.getUserTodos(ctx.user.id)
-  //   ),
-  // }),
+  blog: router({
+    list: publicProcedure.query(() => getBlogPosts()),
+    bySlug: publicProcedure.input((val: any) => val as { slug: string }).query(({ input }) =>
+      getBlogPostBySlug(input.slug)
+    ),
+  }),
+
+  portfolio: router({
+    list: publicProcedure.query(() => getPortfolioProjects()),
+    featured: publicProcedure.query(() => getFeaturedProjects()),
+    bySlug: publicProcedure.input((val: any) => val as { slug: string }).query(({ input }) =>
+      getProjectBySlug(input.slug)
+    ),
+  }),
 });
 
 export type AppRouter = typeof appRouter;

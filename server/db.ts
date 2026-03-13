@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users } from "../drizzle/schema";
+import { InsertUser, users, BlogPost, blogPosts, PortfolioProject, portfolioProjects } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -89,4 +89,41 @@ export async function getUserByOpenId(openId: string) {
   return result.length > 0 ? result[0] : undefined;
 }
 
-// TODO: add feature queries here as your schema grows.
+// Blog Posts
+export async function getBlogPosts(): Promise<BlogPost[]> {
+  const db = await getDb();
+  if (!db) return [];
+
+  return await db.select().from(blogPosts).orderBy(blogPosts.createdAt);
+}
+
+export async function getBlogPostBySlug(slug: string): Promise<BlogPost | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+
+  const result = await db.select().from(blogPosts).where(eq(blogPosts.slug, slug)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+// Portfolio Projects
+export async function getPortfolioProjects(): Promise<PortfolioProject[]> {
+  const db = await getDb();
+  if (!db) return [];
+
+  return await db.select().from(portfolioProjects).orderBy(portfolioProjects.createdAt);
+}
+
+export async function getFeaturedProjects(): Promise<PortfolioProject[]> {
+  const db = await getDb();
+  if (!db) return [];
+
+  return await db.select().from(portfolioProjects).where(eq(portfolioProjects.featured, 1));
+}
+
+export async function getProjectBySlug(slug: string): Promise<PortfolioProject | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+
+  const result = await db.select().from(portfolioProjects).where(eq(portfolioProjects.slug, slug)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
