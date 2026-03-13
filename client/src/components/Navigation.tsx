@@ -22,14 +22,14 @@ export default function Navigation() {
 
       <div className="flex gap-8 pointer-events-auto">
         {navItems.map((item) => (
-          <Link key={item.href} href={item.href}>
-            <a
-              className={`nav-link ${
-                location === item.href ? "text-accent-lava" : ""
-              }`}
-            >
-              {item.label}
-            </a>
+          <Link
+            key={item.href}
+            href={item.href}
+            className={`nav-link ${
+              location === item.href ? "text-accent-lava" : ""
+            }`}
+          >
+            {item.label}
           </Link>
         ))}
       </div>
