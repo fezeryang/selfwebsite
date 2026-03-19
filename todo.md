@@ -62,3 +62,45 @@
 
 ## Testing
 - [x] Vitest tests for backend routes
+
+
+## Internationalization (i18n)
+- [x] 安装i18n库（next-i18next或react-i18next）
+- [x] 创建中英文翻译文件
+- [x] 实现语言切换上下文
+- [x] 更新所有页面使用i18n
+- [x] 添加语言选择器到导航
+
+## Admin Dashboard
+- [x] 创建管理后台布局（AdminLayout）
+- [x] 实现管理员认证检查
+- [x] 创建管理菜单导航
+- [x] 添加受保护的路由
+
+## Blog Management
+- [x] 博客列表页面（显示所有文章）
+- [x] 创建新博客表单
+- [x] 编辑博客文章表单
+- [x] 删除博客功能
+- [ ] 发布/草稿状态管理
+- [ ] 富文本编辑器集成
+
+## Portfolio Management
+- [x] 作品集列表页面
+- [x] 创建新项目表单
+- [x] 编辑项目表单
+- [x] 删除项目功能
+- [x] 特色项目标记功能
+- [ ] 图片上传功能
+
+## Content Management
+- [x] 种子数据脚本（demo内容）
+- [ ] 内容导入/导出功能
+- [ ] 内容验证和错误处理
+
+## UI/UX Polish
+- [x] 表单验证和错误提示
+- [x] 加载状态和骨架屏
+- [x] 成功/失败通知
+- [x] 确认对话框（删除操作）
+- [ ] 响应式表单设计

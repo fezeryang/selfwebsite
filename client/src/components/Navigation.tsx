@@ -1,15 +1,18 @@
 import { useLocation } from "wouter";
 import { Link } from "wouter";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navigation() {
   const [location] = useLocation();
+  const { t } = useTranslation();
 
   const navItems = [
-    { label: "HOME", href: "/" },
-    { label: "PORTFOLIO", href: "/portfolio" },
-    { label: "LAB", href: "/lab" },
-    { label: "BLOG", href: "/blog" },
-    { label: "ABOUT", href: "/about" },
+    { label: t('nav.home'), href: "/" },
+    { label: t('nav.portfolio'), href: "/portfolio" },
+    { label: t('nav.lab'), href: "/lab" },
+    { label: t('nav.blog'), href: "/blog" },
+    { label: t('nav.about'), href: "/about" },
   ];
 
   return (
@@ -20,7 +23,7 @@ export default function Navigation() {
         </div>
       </div>
 
-      <div className="flex gap-8 pointer-events-auto">
+      <div className="flex gap-8 items-center pointer-events-auto">
         {navItems.map((item) => (
           <Link
             key={item.href}
@@ -32,6 +35,7 @@ export default function Navigation() {
             {item.label}
           </Link>
         ))}
+        <LanguageSwitcher />
       </div>
     </nav>
   );

@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "home": "首页",
+    "portfolio": "作品集",
+    "lab": "实验室",
+    "blog": "博客",
+    "about": "关于",
+    "admin": "管理"
+  },
+  "home": {
+    "title": "动力沙",
+    "subtitle": "交互式作品集体验",
+    "coordinates": "坐标",
+    "density": "密度",
+    "status": "状态"
+  },
+  "portfolio": {
+    "title": "作品集",
+    "subtitle": "重力拼贴",
+    "projects": "项目",
+    "featured": "精选作品"
+  },
+  "lab": {
+    "title": "实验室",
+    "subtitle": "3D实验",
+    "cube": "立方体解构",
+    "phase": "阶段"
+  },
+  "blog": {
+    "title": "博客",
+    "subtitle": "存档",
+    "articles": "文章",
+    "category": "分类",
+    "date": "日期",
+    "readMore": "阅读更多"
+  },
+  "about": {
+    "title": "关于",
+    "bio": "个人简介",
+    "contact": "联系方式",
+    "email": "邮箱",
+    "social": "社交媒体"
+  },
+  "admin": {
+    "title": "管理后台",
+    "welcome": "欢迎来到管理面板",
+    "blog": "博客管理",
+    "portfolio": "作品集管理",
+    "logout": "登出",
+    "login": "登录管理员",
+    "unauthorized": "无权限访问"
+  },
+  "blog_admin": {
+    "title": "博客管理",
+    "list": "文章列表",
+    "create": "新建文章",
+    "edit": "编辑文章",
+    "delete": "删除",
+    "publish": "发布",
+    "draft": "草稿",
+    "articleTitle": "文章标题",
+    "slug": "URL别名",
+    "excerpt": "摘要",
+    "content": "内容",
+    "category": "分类",
+    "date": "发布日期",
+    "save": "保存",
+    "cancel": "取消",
+    "confirmDelete": "确定要删除此文章吗？",
+    "deleteSuccess": "文章删除成功",
+    "saveSuccess": "文章保存成功"
+  },
+  "portfolio_admin": {
+    "title": "作品集管理",
+    "list": "项目列表",
+    "create": "新建项目",
+    "edit": "编辑项目",
+    "delete": "删除",
+    "projectTitle": "项目标题",
+    "slug": "URL别名",
+    "description": "项目描述",
+    "technologies": "技术栈",
+    "link": "项目链接",
+    "image": "项目图片",
+    "featured": "精选",
+    "save": "保存",
+    "cancel": "取消",
+    "confirmDelete": "确定要删除此项目吗？",
+    "deleteSuccess": "项目删除成功",
+    "saveSuccess": "项目保存成功"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "back": "返回",
+    "edit": "编辑",
+    "delete": "删除",
+    "save": "保存",
+    "cancel": "取消",
+    "search": "搜索",
+    "filter": "筛选",
+    "language": "语言",
+    "english": "English",
+    "chinese": "中文"
+  }
+}

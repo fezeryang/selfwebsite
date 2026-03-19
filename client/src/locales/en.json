@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "home": "HOME",
+    "portfolio": "PORTFOLIO",
+    "lab": "LAB",
+    "blog": "BLOG",
+    "about": "ABOUT",
+    "admin": "ADMIN"
+  },
+  "home": {
+    "title": "KINETIC SAND",
+    "subtitle": "Interactive Portfolio Experience",
+    "coordinates": "COORDINATES",
+    "density": "DENSITY",
+    "status": "STATUS"
+  },
+  "portfolio": {
+    "title": "PORTFOLIO",
+    "subtitle": "Gravity Collage",
+    "projects": "Projects",
+    "featured": "Featured Works"
+  },
+  "lab": {
+    "title": "LAB",
+    "subtitle": "3D Experiments",
+    "cube": "Cube Deconstruction",
+    "phase": "Phase"
+  },
+  "blog": {
+    "title": "BLOG",
+    "subtitle": "Archive",
+    "articles": "Articles",
+    "category": "Category",
+    "date": "Date",
+    "readMore": "Read More"
+  },
+  "about": {
+    "title": "ABOUT",
+    "bio": "Biography",
+    "contact": "Contact",
+    "email": "Email",
+    "social": "Social"
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "welcome": "Welcome to Admin Panel",
+    "blog": "Blog Management",
+    "portfolio": "Portfolio Management",
+    "logout": "Logout",
+    "login": "Login to Admin",
+    "unauthorized": "Unauthorized Access"
+  },
+  "blog_admin": {
+    "title": "Blog Management",
+    "list": "Articles",
+    "create": "New Article",
+    "edit": "Edit Article",
+    "delete": "Delete",
+    "publish": "Publish",
+    "draft": "Draft",
+    "articleTitle": "Article Title",
+    "slug": "URL Slug",
+    "excerpt": "Excerpt",
+    "content": "Content",
+    "category": "Category",
+    "date": "Publication Date",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirmDelete": "Are you sure you want to delete this article?",
+    "deleteSuccess": "Article deleted successfully",
+    "saveSuccess": "Article saved successfully"
+  },
+  "portfolio_admin": {
+    "title": "Portfolio Management",
+    "list": "Projects",
+    "create": "New Project",
+    "edit": "Edit Project",
+    "delete": "Delete",
+    "projectTitle": "Project Title",
+    "slug": "URL Slug",
+    "description": "Description",
+    "technologies": "Technologies",
+    "link": "Project Link",
+    "image": "Project Image",
+    "featured": "Featured",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirmDelete": "Are you sure you want to delete this project?",
+    "deleteSuccess": "Project deleted successfully",
+    "saveSuccess": "Project saved successfully"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "back": "Back",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "search": "Search",
+    "filter": "Filter",
+    "language": "Language",
+    "english": "English",
+    "chinese": "中文"
+  }
+}

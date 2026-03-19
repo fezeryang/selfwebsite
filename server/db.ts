@@ -127,3 +127,81 @@ export async function getProjectBySlug(slug: string): Promise<PortfolioProject |
   const result = await db.select().from(portfolioProjects).where(eq(portfolioProjects.slug, slug)).limit(1);
   return result.length > 0 ? result[0] : undefined;
 }
+
+// Blog CRUD Operations
+export async function createBlogPost(post: Omit<BlogPost, 'id' | 'createdAt' | 'updatedAt'>): Promise<BlogPost | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+
+  const result = await db.insert(blogPosts).values({
+    ...post,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  });
+  
+  const id = result[0]?.insertId as number;
+  return getBlogPostById(id);
+}
+
+export async function getBlogPostById(id: number): Promise<BlogPost | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+
+  const result = await db.select().from(blogPosts).where(eq(blogPosts.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function updateBlogPost(id: number, post: Partial<BlogPost>): Promise<BlogPost | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+
+  await db.update(blogPosts).set({ ...post, updatedAt: new Date() }).where(eq(blogPosts.id, id));
+  return getBlogPostById(id);
+}
+
+export async function deleteBlogPost(id: number): Promise<boolean> {
+  const db = await getDb();
+  if (!db) return false;
+
+  await db.delete(blogPosts).where(eq(blogPosts.id, id));
+  return true;
+}
+
+// Portfolio CRUD Operations
+export async function createPortfolioProject(project: Omit<PortfolioProject, 'id' | 'createdAt' | 'updatedAt'>): Promise<PortfolioProject | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+
+  const result = await db.insert(portfolioProjects).values({
+    ...project,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  });
+  
+  const id = result[0]?.insertId as number;
+  return getProjectById(id);
+}
+
+export async function getProjectById(id: number): Promise<PortfolioProject | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+
+  const result = await db.select().from(portfolioProjects).where(eq(portfolioProjects.id, id)).limit(1);
+  return result.length > 0 ? result[0] : undefined;
+}
+
+export async function updatePortfolioProject(id: number, project: Partial<PortfolioProject>): Promise<PortfolioProject | undefined> {
+  const db = await getDb();
+  if (!db) return undefined;
+
+  await db.update(portfolioProjects).set({ ...project, updatedAt: new Date() }).where(eq(portfolioProjects.id, id));
+  return getProjectById(id);
+}
+
+export async function deletePortfolioProject(id: number): Promise<boolean> {
+  const db = await getDb();
+  if (!db) return false;
+
+  await db.delete(portfolioProjects).where(eq(portfolioProjects.id, id));
+  return true;
+}
