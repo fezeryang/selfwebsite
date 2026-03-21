@@ -201,13 +201,13 @@ export default function Blog() {
             }`}
             onClick={() => setActiveEntry(entry.id)}
           >
-            <span className="text-xs font-mono text-blue-300 opacity-60 block mb-2">
+            <span className="text-xs font-mono text-blueprint-cyan opacity-100 block mb-2 font-bold tracking-wider">
               {entry.date}
             </span>
-            <h3 className="text-lg font-semibold text-white mb-3">
+            <h3 className="text-xl font-bold text-white mb-3 font-sans">
               {entry.title}
             </h3>
-            <p className="text-sm text-blue-200 opacity-70 line-clamp-3">
+            <p className="text-sm text-gray-100 opacity-95 line-clamp-3 leading-relaxed">
               {entry.preview}
             </p>
           </div>

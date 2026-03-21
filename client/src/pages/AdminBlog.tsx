@@ -47,6 +47,9 @@ export default function AdminBlog() {
   });
 
   const { data: blogs, isLoading, refetch } = trpc.blog.list.useQuery();
+  const createBlogMutation = trpc.blog.create.useMutation();
+  const updateBlogMutation = trpc.blog.update.useMutation();
+  const deleteBlogMutation = trpc.blog.delete.useMutation();
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -95,7 +98,14 @@ export default function AdminBlog() {
     }
 
     try {
-      // TODO: Implement save mutation
+      if (editingId) {
+        await updateBlogMutation.mutateAsync({
+          id: editingId,
+          ...formData,
+        });
+      } else {
+        await createBlogMutation.mutateAsync(formData);
+      }
       toast.success(t("blog_admin.saveSuccess"));
       handleCloseDialog();
       refetch();
@@ -108,7 +118,7 @@ export default function AdminBlog() {
     if (!deleteId) return;
 
     try {
-      // TODO: Implement delete mutation
+      await deleteBlogMutation.mutateAsync({ id: deleteId });
       toast.success(t("blog_admin.deleteSuccess"));
       setDeleteId(null);
       refetch();

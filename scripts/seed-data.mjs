@@ -45,7 +45,7 @@ async function seedData() {
 
     for (const post of blogPosts) {
       await connection.execute(
-        'INSERT INTO blogPosts (title, slug, excerpt, content, category, date, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, NOW(), NOW())',
+        'INSERT INTO blog_posts (title, slug, excerpt, content, category, date, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, NOW(), NOW())',
         [post.title, post.slug, post.excerpt, post.content, post.category, post.date]
       );
     }
@@ -93,7 +93,7 @@ async function seedData() {
 
     for (const project of projects) {
       await connection.execute(
-        'INSERT INTO portfolioProjects (title, slug, description, technologies, link, imageUrl, featured, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?, NOW(), NOW())',
+        'INSERT INTO portfolio_projects (title, slug, description, technologies, link, imageUrl, featured, createdAt, updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?, NOW(), NOW())',
         [
           project.title,
           project.slug,

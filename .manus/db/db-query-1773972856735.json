@@ -1,0 +1,31 @@
+{
+  "query": "SELECT id, title, slug, category, date FROM blog_posts ORDER BY createdAt DESC;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3KJJimJKY22yMwi.root --database Y8XV3pEutm7V38WMzQrqR6 --execute SELECT id, title, slug, category, date FROM blog_posts ORDER BY createdAt DESC;",
+  "rows": [
+    {
+      "id": "2",
+      "title": "Interactive Design Patterns",
+      "slug": "interactive-design-patterns",
+      "category": "Design",
+      "date": "2026-03-19"
+    },
+    {
+      "id": "3",
+      "title": "WebGL for Creative Coding",
+      "slug": "webgl-creative-coding",
+      "category": "Graphics",
+      "date": "2026-03-18"
+    },
+    {
+      "id": "1",
+      "title": "Getting Started with p5.js",
+      "slug": "getting-started-p5js",
+      "category": "Tutorial",
+      "date": "2026-03-20"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\ttitle\tslug\tcategory\tdate\n2\tInteractive Design Patterns\tinteractive-design-patterns\tDesign\t2026-03-19\n3\tWebGL for Creative Coding\twebgl-creative-coding\tGraphics\t2026-03-18\n1\tGetting Started with p5.js\tgetting-started-p5js\tTutorial\t2026-03-20\n",
+  "stderr": "",
+  "execution_time_ms": 204
+}
